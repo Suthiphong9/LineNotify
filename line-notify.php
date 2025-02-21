@@ -25,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo 'ส่งข้อมูลไปยัง LINE สำเร็จ';
     } else {
         echo 'ไม่สามารถส่งข้อมูลไปยัง LINE ได้';
+        error_log("Debugging: " . $result);
+
     }
 } else {
     echo 'การร้องขอไม่ถูกต้อง';
