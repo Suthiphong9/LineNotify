@@ -62,14 +62,20 @@ function sendToLine(button) {
     const message = `วัน: ${day}\nวิชา: ${subject}\nกิจกรรม: ${activity}`;
 
     // ส่งข้อมูลไปยัง PHP Proxy Server
-    fetch('https://line-notify-tau.vercel.app/line-notify.php', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ message: "ทดสอบส่งข้อความ" })
+    fetch('line-notify.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({ data: JSON.stringify(data) })
 })
 .then(response => response.text())
-.then(result => console.log(result))
-.catch(error => console.error("เกิดข้อผิดพลาด:", error));
+    .then(result => {
+        alert(result);
+    })
+    .catch(error => {
+        console.error('เกิดข้อผิดพลาด:', error);
+        alert('เกิดข้อผิดพลาดในการส่งข้อมูลทั้งหมดไปยัง LINE');
+    });
 }
 
 function sendAllToLine() {
