@@ -29,46 +29,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo 'การร้องขอไม่ถูกต้อง';
 }
-// if (isset($_POST['submit'])) {
-//     $header = "Testing Line Notify";
-//     $username = $_POST['username'];
-//     $pass = $_POST['pass'];
 
-//     $message = $header .
-//         "\n" . "ชื่อ: " . $username .
-//         "\n" . "รหัส : " . $pass;
-
-//     if (!empty($username) && !empty($pass)) {
-//         sendLineMessage($message);
-//         echo "<script>alert('ส่งข้อมูลสำเร็จ');</script>";
-//         header("Location: index.php");
-//         exit();
-//     } else {
-//         echo "<script>alert('กรุณากรอกให้ครบ');</script>";
-//         header("Location: index.php");
-//         exit();
-//     }
-// }
-
-// function sendLineMessage($message) {
-//     define('LINE_API', "https://notify-api.line.me/api/notify");
-//     define('LINE_TOKEN', "A6eB2v0WnCF75I0JSHl5hr6EUiCMxTAbvWim0GLVkaF");
-
-//     $queryData = array('message' => $message);
-//     $queryData = http_build_query($queryData, '', '&');
-//     $headerOptions = array(
-//         'http' => array(
-//             'method' => 'POST',
-//             'header' => "Content-Type: application/x-www-form-urlencoded\r\n"
-//                         . "Authorization: Bearer " . LINE_TOKEN . "\r\n"
-//                         . "Content-Length: " . strlen($queryData) . "\r\n",
-//             'content' => $queryData
-//         )
-//     );
-
-//     $context = stream_context_create($headerOptions);
-//     $result = file_get_contents(LINE_API, false, $context);
-//     $res = json_decode($result);
-//     return $res;
-// }
 ?>
