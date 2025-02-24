@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE Notify Example</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js"></script>
+    <script src="/js/auth.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>ตารางเรียน</h1>
+    
+        <div class="input-row">
+            <label for="day">วัน:</label>
+            <select id="day" class="input-field">
+                <option value="จันทร์">จันทร์</option>
+                <option value="อังคาร">อังคาร</option>
+                <option value="พุธ">พุธ</option>
+                <option value="พฤหัสบดี">พฤหัสบดี</option>
+                <option value="ศุกร์">ศุกร์</option>
+            </select>
+    
+            <label for="subject">วิชา:</label>
+            <input type="text" id="subject" class="input-field" placeholder="ชื่อวิชา">
+    
+            <label for="activity">กิจกรรม:</label>
+            <input type="text" id="activity" class="input-field" placeholder="ชื่อกิจกรรม">
+    
+            <button onclick="addRow()" class="btn">เพิ่ม</button>
+        </div>
+    
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>วัน</th>
+                    <th>วิชา</th>
+                    <th>กิจกรรม</th>
+                    <th>ส่งข้อมูล</th>
+                    <th>การจัดการ</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table><br><br>
+        <button onclick="sendAllToLine()" class="btn">ส่งข้อมูลทั้งหมด</button>
+        <button onclick="logout()" class="button:hover">ออกจากระบบ</button>
+        
+        </div>
+</body>
+</html>
